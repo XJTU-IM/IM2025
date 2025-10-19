@@ -11,7 +11,7 @@ cfg = load_model_config("./cfg/config.json")
 cfg["round"] = 2
 cfg["judge"] = False
 # cfg["cliped"] = True
-# cfg["test"] = True
+cfg["test"] = True
 
 if cfg["round"] == 1:
     cfg["img_path"] = "/home/ubuntu/桌面/data/desk"

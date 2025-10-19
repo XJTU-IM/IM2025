@@ -1,0 +1,8 @@
+path: dataset/YOLO_shim
+train: images/train
+val: images/val
+#test: images/test
+
+names:
+  0: wai
+  1: nei

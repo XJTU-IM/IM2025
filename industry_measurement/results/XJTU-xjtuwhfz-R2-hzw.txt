@@ -1,9 +1,0 @@
-START
-Goal_ID=1;Goal_A=12.9;Goal_B=62.7;Goal_C=271.6;Goal_D=0.0
-Goal_ID=1;Goal_A=13.0;Goal_B=52.8;Goal_C=135.1;Goal_D=0.0
-
-Goal_ID=1;Goal_A=11.0;Goal_B=56.8;Goal_C=231.2;Goal_D=0.0
-
-
-Goal_ID=2;Goal_A=48.8;Goal_B=22.5;Goal_C=157.4;Goal_D=0.0
-END

@@ -1,40 +1,56 @@
 # Industry Measurement 2025
+这里是2025年西安交通大学Robocup先进视觉-工业测量专项赛的代码仓库，我们团队来自23级人工智能、自动化专业。在2025年中国机器人大赛中，我们取得了先进视觉专项赛的冠军和全国总决赛的二等奖，本仓库为我们方案的完整实现，为学弟学妹们提供参考。
 
 ## 数据集
-- 裁剪后的桌面 
-- 三种格式(labelme格式、yolo格式、mscoco格式)的关键点检测数据集
+因数据集过大(30G), 我们放在网盘以供自取：https://pan.baidu.com/s/1MZDW8RhHfFipV-LxlUtjAA?pwd=bcag
 
-TODO：垫片的语义分割数据集
+## 使用
+```
+.
+├── Docs # 文档，包括相机驱动安装步骤、
+│   ├── imgs
+│   ├── index.html
+│   ├── README.md   # 方案思路
+│   └── _sidebar.md
+├── industry_measurement    # 主目录
+│   ├── calculate.py
+│   ├── cfg # 配置
+│   ├── common.py
+│   ├── example
+│   ├── extract_desktop.py
+│   ├── for_ellipse.py
+│   ├── For_shim.py
+│   ├── Log
+│   ├── main.py # 主代码
+│   ├── results
+│   ├── results_process.py
+│   ├── saves
+│   ├── test
+│   ├── ui_mainwindow.py
+│   ├── utils_camera.py
+│   ├── utils.py
+│   ├── visualize.py
+│   ├── yolo_poser.py
+│   ├── yolo_segor.py
+│   └── yolov5_seg
+├── judgeGui-2025   # 裁判盒链接
+│   └── README.md
+├── README.md
+└── tools   # 数据集处理工具、相机取流
+    ├── clip.py
+    ├── images_process.py
+    ├── images_rename.py
+    ├── images_save_space.py
+    ├── label2mscoco.py
+    ├── Log
+    ├── process_dataset
+    ├── __pycache__
+    ├── readme.md
+    ├── realsense.py
+    ├── save_img_with_camera.py
+    ├── split_dataset_mscoco.py
+    ├── split_dataset.py
+    ├── StreamForPlus.py
+    └── utils.py
 
-## 8.5更新
-增加了通过语义分割获得垫片轮廓的代码，基于yolov5-seg， 在industry_measurement/yolov5-seg/use-seg中
-
-save_mask():输入：一张图片
-输出:bbox_list, 可视化后的图像, 二值掩码
-
-现在需要通过bbox_list和二值掩码计算每个目标的外径、內径
-
-## 7.18更新
-现在主流程已经基本处理完
-
-TODO：
-- 加一个小模型判断螺钉姿势， 使用深度图计算长度
-- 如果零件伸到桌外，还没有做这种情况的处理
-
-## 7.5更新
-
-添加了Astra pro plus 相机的python sdk
-
-更新了主流程， 位于industry_measurement/main.py, 分为两个线程，camera_node监听相机信息并传给主线程， 
-image_prcoess对图像进行处理并将处理后的图片展示到ui上
-
-目前完成了获取桌面轮廓部分
-
-还有一个问题， 比赛要求可能会把螺钉立起来，但是我们现在只使用了彩色图，面对这种情况就无能为力了。 一个办法是train一个小模型，来判断螺钉的状态：是平放的还是直立的， 如果是直立的就启动深度图进行估计， ye
-
-TODO：对得到的桌面轮廓进行零件关键点检测(数据集)并计算相应指标
-
-## 4.16日更新
-- 裁判测试和评估脚本
-## 2.28日更新
-- 重写了检测方桌轮廓的逻辑，修复了如果没有检测到轮廓，主线程卡死的问题
+15 directories, 30 files

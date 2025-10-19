@@ -62,6 +62,7 @@ class ImageProcessYOLO(QThread):
         while self._running:
             if(self.cnt >= 2):  # 如果重启次数过多，就用深度图
                 print("重启次数过多，自动退出")
+                self.end_sign.emit()
                 
             cliped_img = color_img
             cliped_depth_img = depth_img
