@@ -1,0 +1,22 @@
+{   "round": 1,
+    "test": false,
+    "judge": true,
+
+    "cliped": false,
+    "img_path": "/home/ubuntu/桌面/data/desk",
+    "save_path": "./results",
+
+    "get_desk_method": "canny",
+    "is_stop": true,
+    "draw_keypoints": true,
+    "show_time": 1,
+    "desk_poser": "./yolov5_seg/weights/desk_s_2100.pt",
+    "circle_segor":"./yolov5_seg/weights/circle-4000.pt",
+    "screw_poser": "./yolov5_seg/weights/screw-4000.pt",
+    "shim_segor": "./yolov5_seg/weights/shim_s_4000.pt",
+
+    "judger_ip": "10.164.243.69",
+    "judger_port": 6666,
+    "our_ip": "10.172.87.87",
+    "our_port": 12345
+}
